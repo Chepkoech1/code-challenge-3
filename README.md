@@ -30,7 +30,7 @@
 
 ## Running the application
 Use the following steps to run the app.
-
+  - if you haven't installed json-server, run this command npm install -g json-server
   - Run: json-server --watch db.json in db folder.
   - In 'flatdango movie files' folder use index.html file and open in live server.
 
