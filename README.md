@@ -5,7 +5,9 @@
    -live server
 
 ## Description
-
+- This website fetches data from db.json file in db folder. It then launches the website in your web browser to display the movies.
+- To view the movie details, click on each move title displayed on the left.
+- You can buy ticket by clicking on the buy ticket button.
 ## Built with
    
    - Html
