@@ -1,8 +1,8 @@
 # code-challenge-3
 ## Dependencies
 
-   -json-server
-   -live server
+   - json-server
+   - live server
 
 ## Description
 - This website fetches data from db.json file in db folder. It then launches the website in your web browser to display the movies.
