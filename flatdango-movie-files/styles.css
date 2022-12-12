@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.allMovies{
+    height: 100%;
+    width: 40%;
+    background-color: green;
+    border-right: 4px solid black;
+    overflow-y: auto;
+}
+.singlePoster{
+    margin-top: 2px;
+    width: 100%;
+    height: calc(50% - 2px);
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.singlePoster img{
+    height: 80%;
+    display: block;
+    margin: auto;
+}
+.singlePoster .tittle{
+    text-align: center;
+}
+
+.singleMovie{
+    height: 100%;
+    width: 60%;
+    background-color: grey;
+}
+.singleMovie h2{
+    text-align: center;
+    text-decoration: underline;
+    height: 7%;
+}
+.singleMovie img{
+    height: 53%;
+    display: block;
+    margin: auto;
+
+}
+.imgDetails{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    padding-top: 5px;
+}
+
+.imgDetails .description{
+    width: 60%;
+    text-align: center;
+    padding: 6px;
+    display: grid;
+    place-items: center;
+    overflow: auto;
+
+}
+.imgDetails div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-left: 2px solid black;
+}
+.imgDetails div > h3{
+    margin-top: 10px;
+}
+.tickets{
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid black;
+    align-items: center;
+}
+.tickets button{
+    cursor: pointer;
+    padding: 4px;
+    text-transform: capitalize;
+}
