@@ -3,11 +3,11 @@ displayAllMovies();
 
 async function displayAllMovies() {
     const allMovies = document.querySelector('.allMovies');
-    await fetch('http://localhost:3000/films')
+    await fetch('https://chepkoech1.github.io/server/db.json')
         .then(res => res.json())
         .then(res => {
             console.log(res);
-            res.forEach(element => {
+            res.films.forEach(element => {
                 const singlePoster = document.createElement('div');
                 singlePoster.classList.add('singlePoster');
                 singlePoster.innerHTML = `
@@ -35,10 +35,10 @@ function calculateAvailabeTickets(capacity, ticketsSold) {
 
 async function getSingleMovie(index = 0) {
     let ticketsSold;
-    await fetch(`http://localhost:3000/films/${index + 1}`)
+    await fetch(`https://chepkoech1.github.io/server/db.json${index + 1}`)
         .then(res => res.json())
         .then(res => {
-            ticketsSold = res.tickets_sold;
+            ticketsSold = res.films.tickets_sold;
             const singleMovie = document.querySelector('.singleMovie');
             singleMovie.innerHTML = `
                 <h2 class="movieTittle">${res.title}</h2>
@@ -65,18 +65,18 @@ async function getSingleMovie(index = 0) {
         })
     const addVotBtn = document.querySelector('button');
     addVotBtn.addEventListener('click', () => {
-        fetch(`http://localhost:3000/films/${index + 1}`, {
+        fetch(`https://chepkoech1.github.io/server/db.json{index + 1}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                "tickets_sold": ticketsSold + 1,
+                "tickets_sold":films.ticketsSold + 1,
             })
         })
             .then(res => res.json())
             .then(res => {
-                if (res.capacity === res.tickets_sold) {
+                if (res.films.capacity === res.tickets_sold) {
                     const tickets = document.querySelector('.tickets');
                     tickets.textContent = 'All Tickets Sold!!'
 
