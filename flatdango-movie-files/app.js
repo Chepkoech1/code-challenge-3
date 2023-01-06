@@ -65,28 +65,15 @@ async function getSingleMovie(index=0) {
             }
 
         })}
-    const addVotBtn = document.querySelector('button');
-    addVotBtn.addEventListener('click', () => {
-        fetch(`http://localhost:3000/films/${index + 1}`, 
-        
-        {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "tickets_sold": ticketsSold + 1,
-            })
-        })
-            .then(res => res.json())
-            .then(res => {
-                if (res.capacity === res.tickets_sold) {
-                    const tickets = document.querySelector('.tickets');
-                    tickets.textContent = 'All Tickets Sold!!'
+    const buyTicket = document.querySelector('button');
+    console.log(buyTicket)
+    const availableTickets = document.querySelector('.availableTickets')
+    buyTicket.addEventListener('click', () => {
+        console.log('clicked')
+        let number = parseInt(availableTickets.textContent)
+        number-=1
+        availableTickets.textContent = number
 
-                }
-                else {
-                    getSingleMovie(index);
-                }
-            })
+        
+               
     })
