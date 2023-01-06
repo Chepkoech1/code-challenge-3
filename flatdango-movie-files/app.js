@@ -3,10 +3,11 @@ displayAllMovies();
 
 async function displayAllMovies() {
     const allMovies = document.querySelector('.allMovies');
-    await fetch('http://localhost:3000/films')
+    await fetch('../db/db.json')
         .then(res => res.json())
         .then(res => {
             console.log(res);
+            res = res.films
             res.forEach(element => {
                 const singlePoster = document.createElement('div');
                 singlePoster.classList.add('singlePoster');
@@ -33,11 +34,12 @@ function calculateAvailabeTickets(capacity, ticketsSold) {
     return capacity - ticketsSold;
 }
 
-async function getSingleMovie(index = 0) {
+async function getSingleMovie(index=0) {
     let ticketsSold;
-    await fetch(`http://localhost:3000/films/${index + 1}`)
+    await fetch(`../db/db.json`)
         .then(res => res.json())
         .then(res => {
+            res = res.films[index]
             ticketsSold = res.tickets_sold;
             const singleMovie = document.querySelector('.singleMovie');
             singleMovie.innerHTML = `
