@@ -59,21 +59,23 @@ async function getSingleMovie(index=0) {
                     <h3 class="availableTickets">Available Tickets: <span>${calculateAvailabeTickets(res.capacity, res.tickets_sold)}</span></h3>
                 </div>
             `
-            if (res.capacity === res.tickets_sold) {
-                const tickets = document.querySelector('.tickets');
-                tickets.textContent = 'All Tickets Sold!!'
-            }
+            const buyTicket = document.querySelector('button');
+            console.log(buyTicket)
+            const availableTickets = document.querySelector('.availableTickets span')
+            buyTicket.addEventListener('click', () => {
+                console.log('clicked')
+                let number = parseInt(availableTickets.textContent)
+                if (number === 1) {
+                    const tickets = document.querySelector('.tickets');
+                    tickets.textContent = 'All Tickets Sold!!'
+                }
+                number-=1
+                availableTickets.textContent = number
+        
+                
+                       
+            })
+            
 
         })}
-    const buyTicket = document.querySelector('button');
-    console.log(buyTicket)
-    const availableTickets = document.querySelector('.availableTickets')
-    buyTicket.addEventListener('click', () => {
-        console.log('clicked')
-        let number = parseInt(availableTickets.textContent)
-        number-=1
-        availableTickets.textContent = number
-
-        
-               
-    })
+   
