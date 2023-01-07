@@ -15,10 +15,14 @@
    - CSS
 
 ## Getting Started
+   - This project can be accessed using this link:
+
+       https://code-challenge-3-orpin.vercel.app/
+
 
    - Open command line terminal on your computer. Clone the repository by using the following:
 
-   git clone https://github.com/Chepkoech1/code-challenge-3
+      git clone https://github.com/Chepkoech1/code-challenge-3
 
    - Change directory to the repository folder:
 

@@ -3,7 +3,7 @@ displayAllMovies();
 
 async function displayAllMovies() {
     const allMovies = document.querySelector('.allMovies');
-    await fetch('../db/db.json')
+    await fetch('https://code-challenge-3-orpin.vercel.app/db/db.json')
         .then(res => res.json())
         .then(res => {
             console.log(res);
