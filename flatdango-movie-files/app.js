@@ -9,6 +9,7 @@ async function displayAllMovies() {
             console.log(res);
             res = res.films
             res.forEach(element => {
+                console.log(element)
                 const singlePoster = document.createElement('div');
                 singlePoster.classList.add('singlePoster');
                 singlePoster.innerHTML = `
@@ -36,7 +37,7 @@ function calculateAvailabeTickets(capacity, ticketsSold) {
 
 async function getSingleMovie(index=0) {
     let ticketsSold;
-    await fetch(`../db/db.json`)
+    await fetch(`https://code-challenge-3-orpin.vercel.app/db/db.json`)
         .then(res => res.json())
         .then(res => {
             res = res.films[index]
